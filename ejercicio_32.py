@@ -3,8 +3,11 @@ from pyspark.sql import SparkSession
 spark = (
     SparkSession.builder
     .appName("mi_segundo_pyspark")
+    .master("local[1]")
     .getOrCreate()
 )
+
+spark.sparkContext.setLogLevel("ERROR")
 
 # --- Código del DataFrame de prueba ---
 
